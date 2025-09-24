@@ -17,7 +17,7 @@ public class ProductTest {
 
     @Test
     @DisplayName("이미지를 이용한 데이터 추가")
-    public void createProductMany(){
+    public void createProductMany() {
         // 특정한 폴더 내에 들어 있는 상품 이미지들을 이용하여 상품 테이블에 추가합니다.
         GenerateData gendata = new GenerateData();
 
@@ -25,12 +25,11 @@ public class ProductTest {
         System.out.println("총 이미지 개수 : " + imageNameList.size());
 
         // 반복문을 사용하여 데이터 베이스에 각각 추가합니다.
-        for (int i = 0; i <imageNameList.size(); i++) {
-            Product bean = gendata.createProduct(i,imageNameList.get(i));
+        for (int i = 0; i < imageNameList.size(); i++) {
+            Product bean = gendata.createProduct(i, imageNameList.get(i));
             System.out.println(bean);
             this.productRepository.save(bean);
         }
-
-        }
+    }
     }
 
